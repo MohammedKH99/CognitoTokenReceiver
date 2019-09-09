@@ -1,0 +1,94 @@
+<form action="action_page.php">
+    <div class="imgcontainer">
+      <img src="https://media.licdn.com/dms/image/C510BAQHWkVnReWM0rA/company-logo_200_200/0?e=2159024400&v=beta&t=-oR14_4NT9y4C3TS1WQdK4UXxhRNMGz9G5XgfS5GGIw" alt="Avatar" class="avatar">
+    </div>
+  
+    <div class="container">
+      <label for="regionname"><b>Choose Cognito Region</b></label>
+      <select  [(ngModel)]="region" [ngModelOptions]="{standalone: true}">
+            <option value="us-east-1">us-east-1</option>
+            <option value="us-east-2">us-east-2</option>
+            <option value="us-west-1">us-west-1</option>
+            <option value="us-west-2">us-west-2</option>
+            <option value="ap-east-1">ap-east-1	</option>
+            <option value="ap-south-1	">ap-south-1</option>
+            <option value="ap-northeast-1">ap-northeast-1</option>
+            <option value="ap-northeast-2	">ap-northeast-2</option>
+            <option value="ap-northeast-3	">ap-northeast-3</option>
+            <option value="ap-southeast-1">ap-southeast-1</option>
+            <option value="ap-southeast-2">ap-southeast-2</option>
+            <option value="ca-central-1">ca-central-1</option>
+            <option value="cn-north-1">cn-north-1</option>
+            <option value="cn-northwest-1">cn-northwest-1</option>
+            <option value="eu-central-1">eu-central-1</option>
+            <option value="eu-west-1">eu-west-1</option>
+            <option value="eu-west-2">eu-west-2</option>
+            <option value="eu-west-3">eu-west-3</option>
+            <option value="eu-north-1">eu-north-1</option>
+            <option value="me-south-1">me-south-1</option>
+            <option value="sa-east-1">sa-east-1</option>
+            <option value="us-gov-east-1">us-gov-east-1</option>
+            <option value="us-gov-west-1">us-gov-west-1</option>
+
+       </select>
+      <!-- <input type="text" [disabled]='userpooldisable'  [(ngModel)]="region"  placeholder="Enter Cognito Region" name="regionname" required> -->
+  
+      <label for="userpoolid"><b>Enter aws-userpool-id</b></label>
+      <input type="text" [(ngModel)]="userPoolId" placeholder="Enter aws-userpool-id" name="userpoolid" required>
+
+      <label for="userpoolclien"><b>Enter aws-userpool-client-id</b></label>
+      <input type="text" [(ngModel)]="userPoolWebClientId" placeholder="Enter aws-userpool-client-id" name="userpoolclien" required>
+
+      <!-- <button [disabled]='userpooldisable' (click)="onSavedInformation()" type="submit">Save Information</button> -->
+    
+      <label for="usernasme" ><b>Enter username</b></label>
+      <input type="text"  [(ngModel)]="username" placeholder="Enter username" name="usernasme" required>
+
+      <label for="psw"><b>Enter Password</b></label>
+      <input type="password"  [(ngModel)]="password" placeholder="Enter Password" name="psw" required>
+<br>
+      <button  class="btn" (click)="onLogin()" type="submit">Get User Information</button>
+      <br><br>    
+
+      <label id="ti" for="idtok"><b>Token ID</b></label>
+
+      <input id="idt" type="text" value="{{idToken}}" placeholder="Token ID" name="idtok" required #idTokenuser>
+      <!-- <mat-icon aria-hidden="false" aria-label="Example home icon">library_books</mat-icon> -->
+      <i [ngxClipboard]="idTokenuser" class="material-icons" aria-hidden="true">library_books</i>
+
+      <label id="ati" for="acceidtok"><b>Access Token ID</b></label>
+
+      <input id="aidt" type="text" value="{{accessTokent}}" placeholder="Access Token ID" name="acceidtok" required #accessTokeni>
+      <i [ngxClipboard]="accessTokeni" class="material-icons">library_books</i>
+      <br>
+      
+     
+     
+<style>
+  mat-icon {
+    margin: 1em;
+    cursor: pointer;
+}
+.material-icons {
+    padding: 10px;
+    cursor: pointer;
+  /* text-align: center; */
+    width: 9%;
+    text-align: center;
+    position: relative;
+    font-size: 23px;  /* Preferred icon size */
+    display: inline-block;
+    top: 5px;
+    bottom: 5px;
+  /* line-height:0; */
+  /* text-transform: none; */
+  /* letter-spacing: normal; */
+  /* word-wrap: normal; */
+  /* white-space: nowrap; */
+  /* direction: ltr; */
+}
+      </style>
+      
+    </div>
+  
+  </form> 
