@@ -1,16 +1,16 @@
-<form action="action_page.php">
+<form #testForm="ngForm" action="action_page.php">
     <div class="imgcontainer">
-      <img src="https://media.licdn.com/dms/image/C510BAQHWkVnReWM0rA/company-logo_200_200/0?e=2159024400&v=beta&t=-oR14_4NT9y4C3TS1WQdK4UXxhRNMGz9G5XgfS5GGIw" alt="Avatar" class="avatar">
+      <img src="../../assets/backgrouds/Metamorph.png" alt="Avatar" class="avatar">
     </div>
   
-    <div class="container">
+    <div  class="container">
       <label for="regionname"><b>Choose Cognito Region</b></label>
       <select  [(ngModel)]="region" [ngModelOptions]="{standalone: true}">
             <option value="us-east-1">us-east-1</option>
             <option value="us-east-2">us-east-2</option>
             <option value="us-west-1">us-west-1</option>
             <option value="us-west-2">us-west-2</option>
-            <option value="ap-east-1">ap-east-1	</option>
+            <option value="ap-east-1">ap-east-1</option>
             <option value="ap-south-1	">ap-south-1</option>
             <option value="ap-northeast-1">ap-northeast-1</option>
             <option value="ap-northeast-2	">ap-northeast-2</option>
@@ -53,14 +53,15 @@
       <label id="ti" for="idtok"><b>Token ID</b></label>
 
       <input id="idt" type="text" value="{{idToken}}" placeholder="Token ID" name="idtok" required #idTokenuser>
-      <!-- <mat-icon aria-hidden="false" aria-label="Example home icon">library_books</mat-icon> -->
       <i [ngxClipboard]="idTokenuser" class="material-icons" aria-hidden="true">library_books</i>
 
       <label id="ati" for="acceidtok"><b>Access Token ID</b></label>
 
       <input id="aidt" type="text" value="{{accessTokent}}" placeholder="Access Token ID" name="acceidtok" required #accessTokeni>
       <i [ngxClipboard]="accessTokeni" class="material-icons">library_books</i>
-      <br>
+      <br><br>
+
+      <button  class="btn" (click)="testForm.resetForm()" type="reset">Clear</button>
       
      
      
